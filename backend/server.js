@@ -28,17 +28,19 @@ store.on('error', function(error){
 })
 
 // session
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   store: store,
   cookie: {
-    httpOnly: true,     // helps protect from XSS
-    secure: false,      // ❌ don’t use true on localhost
-    sameSite: 'lax',    // ✅ allow cookie in cross-origin (frontend/backend different ports)
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production", // ✅ only true in production
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ allow cross-site in prod
   },
 }));
+
 
 
 
