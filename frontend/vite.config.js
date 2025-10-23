@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-  allowedHosts: 'all',
-},
-
+    allowedHosts: ['notesnap-3.onrender.com', 'your-other-domains'], // or 'all' for testing
+  },
 })
