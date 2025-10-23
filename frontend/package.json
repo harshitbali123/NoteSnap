@@ -11,6 +11,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.76.0",
     "@tailwindcss/vite": "^4.1.15",
+    "@vitejs/plugin-react": "^5.0.4",
     "axios": "^1.12.2",
     "bootstrap-icons": "^1.13.1",
     "html2canvas": "^1.4.1",
@@ -29,7 +30,6 @@
     "@tailwindcss/postcss": "^4.1.15",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.21",
     "cross-env": "^10.1.0",
     "eslint": "^9.36.0",
