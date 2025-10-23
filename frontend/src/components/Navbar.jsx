@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { ChevronDown, Moon, Sun } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 export default function Navbar({ isDark, setIsDark }) {
   const [accountOpen, setAccountOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Navbar({ isDark, setIsDark }) {
 
   async function handleLogout() {
     try {
-      await fetch('http://localhost:5000/user/logout', { method: 'POST', credentials: 'include' });
+      await fetch(`${backendUrl}/user/logout`, { method: 'POST', credentials: 'include' });
     } catch (e) {}
     try { logout(); } catch (e) {}
     navigate('/', { replace: true });

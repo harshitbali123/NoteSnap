@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const AuthContext = createContext();
 
@@ -8,7 +9,7 @@ export function AuthProvider({ children }) {
 
   async function rehydrate() {
     try {
-      const res = await fetch("http://localhost:5000/user/profile", {
+      const res = await fetch(`${backendUrl}/user/profile`, {
         method: "GET",
         credentials: "include",
       });
