@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
-    allowedHosts: ['all'], // allow all hosts (safe for Render)
+    allowedHosts: 'all',
     port: 5173,
   },
 })
